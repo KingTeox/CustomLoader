@@ -22,7 +22,7 @@ namespace Program
 
                 if (Valor.ToLower() == "sim" || Valor.ToLower() == "yes")
                 {
-                    strCmdText = "'/C npm i --save && node index.js";
+                    strCmdText = "'/C npm update --save && node index.js";
                     Process.Start("CMD.exe", strCmdText);
                 } else
                 {
