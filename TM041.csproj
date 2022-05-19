@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>Novo.ico</ApplicationIcon>
+    <Copyright>TM041 LTDA</Copyright>
+    <PackageIcon>1647078931191.jpeg</PackageIcon>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.10.10</FileVersion>
+    <StartupObject>Program.Load</StartupObject>
+    <PackageId>$(AssemblyName) : TM041 LTDA</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Novo.ico" />
+  </ItemGroup>
+
+</Project>
