@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>Novo.ico</ApplicationIcon>
+    <Copyright>Teox Services</Copyright>
+    <PackageIcon>1647078931191.jpeg</PackageIcon>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.10.10</FileVersion>
+    <StartupObject>Program.Load</StartupObject>
+    <PackageId>$(AssemblyName) : Teox Services</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Novo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DiscordRichPresence" Version="1.0.175" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+</Project>
