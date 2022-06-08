@@ -1,13 +1,31 @@
-# CustomLoader
-Run the index.js file using node
+New Update [RPC](#UpdateRPC)
 
+Loader [Dependencies](#Dependencies) 
+
+Required [Nodemon](#Nodemon)
+
+# CustomLoader
+
+Run the index.js file using node
 
 Mude o icone e nome do execultavel 
 
 Change the icon and name of exe
 
+# UpdateRPC 
 
-#Installation nodemon
+Coloque o ID do client RPC para iniciar o RPC Presence
+Put the RPC client ID to start RPC Presence
+
+# Dependencies
+
+>DiscordRichPresence [Here](https://github.com/Lachee/discord-rpc-csharp)
+
+>Newtonsoft.Json  [Here](https://github.com/Lachee/discord-rpc-csharp)
+
+>.NET 3.5+ 
+
+# Nodemon
 Either through cloning with git or by using npm (the recommended way):
 
 >npm install -g nodemon # or using yarn: yarn global add nodemon
