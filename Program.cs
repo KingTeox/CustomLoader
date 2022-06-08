@@ -31,7 +31,7 @@ namespace Program
 
                 Console.WriteLine("Loading This..");
 
-                var client = new DiscordRpcClient("958530608756310126", pipe: -1)
+                var client = new DiscordRpcClient("ClientID", pipe: -1)
                 {
                     //Logger = new DiscordRPC.Logging.ConsoleLogger(DiscordRPC.Logging.LogLevel.Trace, true)
                 };
