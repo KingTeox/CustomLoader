@@ -21,7 +21,7 @@ Put the RPC client ID to start RPC Presence
 
 >DiscordRichPresence [Here](https://github.com/Lachee/discord-rpc-csharp)
 
->Newtonsoft.Json  [Here](https://github.com/Lachee/discord-rpc-csharp)
+>Newtonsoft.Json  [Here](https://www.newtonsoft.com/json)
 
 >.NET 3.5+ 
 
