@@ -15,6 +15,7 @@ Change the icon and name of exe
 # UpdateRPC 
 
 Coloque o ID do client RPC para iniciar o RPC Presence
+
 Put the RPC client ID to start RPC Presence
 
 # Dependencies
