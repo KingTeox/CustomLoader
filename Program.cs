@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using DiscordRPC;
 
 #pragma warning disable CS8600 // Conversão de literal nula ou possível valor nulo em tipo não anulável.
 
@@ -9,82 +8,40 @@ namespace Program
     class Load
     {
 
-        private static RichPresence presence = new RichPresence()
-        {
-            Details = "Teox Loader",
-            State = "Running a .js File",
-            Buttons = new Button[]
-            {
-                new Button() { 
-                    Label = "Loader", Url = "https://github.com/KingTeox/CustomLoader" 
-                }
-            }
-        };
+        static string FileEXEC = "";
+        static Process Processo = new Process();
 
         static void Main()
         {
-            bool Exist = File.Exists("index.js");
-            Console.Title = "Multi Loader...";
-            
-            if (Exist)
+            bool FileIndexJS = File.Exists("index.js"); 
+            bool FileAppJS = File.Exists("app.js");
+            bool FileMainJS = File.Exists("main.js");
+            bool FileMainPY = File.Exists("main.py"); 
+            bool FileTestPY = File.Exists("test.py");
+
+            if (FileIndexJS) { Load.FileEXEC = "node index.js"; };
+            if (FileAppJS) { Load.FileEXEC = "node app.js"; };
+            if (FileMainJS) { Load.FileEXEC = "node main.js"; };
+            if (FileMainPY) { Load.FileEXEC = "python main.py"; };
+            if (FileTestPY) { Load.FileEXEC = "python test.py"; };
+
+            Console.Title = "Teox";
+
+            if (Load.FileEXEC != "")
             {
 
-                Console.WriteLine("Loading This..");
-
-                var client = new DiscordRpcClient("ClientID", pipe: -1)
-                {
-                    //Logger = new DiscordRPC.Logging.ConsoleLogger(DiscordRPC.Logging.LogLevel.Trace, true)
-                };
-
-                // Initialize
-                client.Initialize();
-                client.SetPresence(presence);
-
-                Console.Write("Atualizar pacotes ?\n");
-                Console.Write("Digite: ");
-                string Valor = Console.ReadLine();
-
-                if (Valor == "" || Valor == null || Valor == "null") { Valor = "Nao"; };
-
-                Console.Clear();
-
-                Console.Write("Iniciar com nodemon ?\n");
-                Console.Write("Digite: ");
-
-                string nodemon = Console.ReadLine();
-                string starter = "node index.js && pause";
-
-                Console.Clear();
-
-                if (nodemon == "" || nodemon == null || nodemon == "null") { nodemon = "Nao"; };
-                if (nodemon.ToLower() == "sim" || nodemon.ToLower() == "yes")
-                {
-                    starter = "nodemon index.js && pause";
-                };
-
-
-
-                if (Valor.ToLower() == "sim" || Valor.ToLower() == "yes")
-                {
-                    Process.Start("CMD.exe", "'/C npm update --save && " + starter);
-                    while (client != null)
-                    {
-                        Thread.Sleep(25);
-
-                        client.SetPresence(presence);
-                    } return;
-                }; Process.Start("CMD.exe", "'/C " + starter);
-                while (client != null)
-                {
-                    Thread.Sleep(25);
-
-                    client.SetPresence(presence);
-                }   return;
-            }
-            else
-            {
-                Process.Start("CMD.exe", "'/C echo Arquivo index.js nao existe && pause");
-                return;
+                Load.Processo.StartInfo.UseShellExecute = false;
+                Load.Processo.StartInfo.RedirectStandardInput = true;
+                //Load.Processo.StartInfo.RedirectStandardOutput = true;
+                //Load.Processo.StartInfo.RedirectStandardError = true;
+                Load.Processo.StartInfo.FileName = "CMD.exe";
+                Load.Processo.StartInfo.Arguments = "'/C " + Load.FileEXEC;
+                Load.Processo.Start();
+                Load.Processo.WaitForExit();
+                Console.WriteLine("===============>{System crashed}<===============");
+                Console.ReadKey();
+            } else {
+                Process.Start("CMD.exe", "'/C echo Nenhum arquivo valido && pause");
             };
         }
     };
